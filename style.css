@@ -43,7 +43,6 @@ img {
 
 .card {
     width: 29rem;
-    height: auto;
     padding: 2rem;
     border-radius: 2rem;
     background: var(--color-dark-blue);
@@ -85,9 +84,15 @@ img {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0;
 }
 
-.card .ratings a {
+.card .ratings input:hover {
+    background-color: var(--color-light-gray);
+}
+
+.card .ratings input {
+    appearance: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,13 +103,25 @@ img {
     border-radius: 50%;
     gap: 9rem;
     font-size: 1.2rem;
-    transition: all 300ms ease;
+    transition: all 250ms ease;
+    cursor: pointer;
 }
 
-.card .ratings a:hover {
-    background: var(--color-light-gray);
+
+
+
+.rate label {
+    position: relative;
+    top: -44px;
+    left: 27px;
+    color: var(--color-white);
+    cursor: pointer;
+}
+.rate input[type="radio"]:checked {
+    background: var(--color-primary);
     color: var(--color-white);
 }
+
 
 .card button {
     width: 100%;
