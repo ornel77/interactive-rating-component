@@ -26,10 +26,9 @@ html {
 
 body {
     font-family: 'Overpass', sans-serif;
-    display: flex;
+    display: grid;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
+    place-items: center;
     overflow: hidden;
     background: var(--color-very-dark-blue);
 }
@@ -84,7 +83,7 @@ img {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0;
+    margin-bottom: 30px;
 }
 
 .card .ratings input:hover {
@@ -98,25 +97,28 @@ img {
     align-items: center;
     background-color: rgba(131, 128, 128, 0.082);
     color: var(--color-light-gray);
-    width: 4.2rem;
-    height: 4.2rem;
+    padding: 2.2rem;
+    aspect-ratio: 1;
+    /* height: 4.2rem; */
     border-radius: 50%;
     gap: 9rem;
     font-size: 1.2rem;
     transition: all 250ms ease;
     cursor: pointer;
-}
-
-
-
-
-.rate label {
     position: relative;
-    top: -44px;
-    left: 27px;
-    color: var(--color-white);
-    cursor: pointer;
 }
+
+.card .ratings input:before {
+    position: absolute;
+	content: attr(label);
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+    color: var(--color-white);
+
+}
+
+
 .rate input[type="radio"]:checked {
     background: var(--color-primary);
     color: var(--color-white);
